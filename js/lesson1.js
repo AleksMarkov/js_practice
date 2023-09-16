@@ -179,3 +179,55 @@
 //   }
 // }
 // logItems(styles);
+
+
+// Напиши функцію, яка перебирає масив логінів і перевіряє
+// чи є ім'я введене в інпут у цьому масиві і у разі,
+// якщо є - виводить повідомлення "Доступ дозволено"
+// в іншому випадку - "Користувач не знайден"
+
+// const logins = ["Peter", "John", "Igor", "Sasha"];
+
+// function userLogin(array) {
+//    const userName = prompt("Введіть логін");
+//    // if (array.includes(userName)) {
+//    //    alert("Доступ дозволено");
+//    // } else {
+//    //    alert("В доступі відмовлено");
+//    // }
+//    //*
+//    // alert(array.includes(userName) ? "Доступ дозволено" : "В доступі відмовлено");
+//    //*
+//       if (array.includes(userName)) {
+//       return alert("Доступ дозволено");
+      
+//    } 
+//    return alert("В доступі відмовлено");
+   
+// }
+// userLogin(logins);
+
+
+//Напишіть функції для роботи з масивом
+//add(name) додає ім'я до кінця колекції
+//remove(name) видаляє ім'я із колекції
+//update(oldName, newName) змінює ім'я на нове
+
+// const names = ["Alla", "Petro", "Max", "Olena", "Boris"];
+
+// function add(name) {
+//    names.push(name);
+//    return names;
+// }
+// console.log(add('Vladislav'));
+
+// function remove(name) {
+//    const indexName = names.indexOf(name);
+//    if (indexName !== -1) {
+//       names.splice(indexName, 1);
+//       return names;
+//    }
+//    return "User not found";
+   
+// }
+// console.log(remove("Anton"));
