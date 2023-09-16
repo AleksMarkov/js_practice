@@ -38,7 +38,6 @@
 //   alert("Не знаєте? ECMAScript!");
 // }
 
-
 //*
 //Напишіть программу, яка отримує від користувача
 //число (кількість хвилин) и виводить у консоль
@@ -76,13 +75,13 @@
 
 //function counter(min, max){
 //    let total = 0;
- //   for (let i = max; i >= min; i -= 1 ){
+//   for (let i = max; i >= min; i -= 1 ){
 //        console.log(i);
 //        if (i % 2 === 0){
 //            total += i
 //        }
 //    }
-  //  return total;
+//  return total;
 //}
 //console.log(counter(1, 12));
 
@@ -94,30 +93,29 @@
 
 // const num = prompt("Введіть число від одного до чотирьох:");
 
-
 // let result = "";
 // switch (num) {
 //     case "1":
 //         result = "Зима";
-        
+
 //         break;
 //     case "2":
 //         result = "Весна";
-        
+
 //         break;
-    
+
 //         case "3":
 //         result = "Літо";
-        
+
 //         break;
-    
+
 //         case "4":
 //         result = "Осінь";
-        
+
 //         break;
-    
+
 //     default:
-//         result = "Введіть число від 1 до 4!!!";  
+//         result = "Введіть число від 1 до 4!!!";
 // }
 // //alert(result)
 // function check(num) {
@@ -125,25 +123,25 @@
 // switch (num) {
 //     case "1":
 //         result = "Зима";
-        
+
 //         break;
 //     case "2":
 //         result = "Весна";
-        
+
 //         break;
-    
+
 //         case "3":
 //         result = "Літо";
-        
+
 //         break;
-    
+
 //         case "4":
 //         result = "Осінь";
-        
+
 //         break;
-    
+
 //     default:
-//         result = "Введіть число від 1 до 4!!!";  
+//         result = "Введіть число від 1 до 4!!!";
 //     }
 //     return result;
 // }
@@ -158,11 +156,26 @@
 //Видаліть перший елемент масива та виведіть його в консоль
 // Додайте 'Реп' та 'Реггі' на початок списку.
 
-const styles = ['Джаз', 'Блюз'] 
-styles.push('Рок-н-ролл') 
-const i = styles.indexOf('Блюз')
-// styles[i] = 'Класика'
-styles.splice(i, 1, 'Класика')
-console.log(styles.shift())
-styles.unshift('Реп', 'Реггі')
-console.log(styles)
+// const styles = ["Джаз", "Блюз"];
+// styles.push("Рок-н-ролл");
+// const i = styles.indexOf("Блюз");
+// // styles[i] = 'Класика'
+// styles.splice(i, 1, "Класика");
+// console.log(styles.shift());
+// styles.unshift("Реп", "Реггі");
+// // console.log(styles)
+
+// Напишіть функцію logItems (array), яка приймає
+// масив і використовує цикл for, який для кожного елемента
+//буде виводити повідомлення у форматі:
+//<номер елемента> - <значення елемента>
+//Нумерація має починатись з 1
+
+// function logItems(array) {
+//   for (let index = 0; index < array.length; index++) {
+//     const element = array[index];
+
+//     console.log(`${index + 1} - ${element}`);
+//   }
+// }
+// logItems(styles);
