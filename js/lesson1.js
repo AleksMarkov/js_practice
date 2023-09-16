@@ -92,60 +92,77 @@
 // значення '1', то у змінну result запишемо 'зима', якщо має значення
 // '2' - 'весна' і так далі. Розв'яжіть завдання через switch-case.
 
-const num = prompt("Введіть число від одного до чотирьох:");
+// const num = prompt("Введіть число від одного до чотирьох:");
 
 
-let result = "";
-switch (num) {
-    case "1":
-        result = "Зима";
+// let result = "";
+// switch (num) {
+//     case "1":
+//         result = "Зима";
         
-        break;
-    case "2":
-        result = "Весна";
+//         break;
+//     case "2":
+//         result = "Весна";
         
-        break;
+//         break;
     
-        case "3":
-        result = "Літо";
+//         case "3":
+//         result = "Літо";
         
-        break;
+//         break;
     
-        case "4":
-        result = "Осінь";
+//         case "4":
+//         result = "Осінь";
         
-        break;
+//         break;
     
-    default:
-        result = "Введіть число від 1 до 4!!!";  
-}
-//alert(result)
-function check(num) {
-    let result = "";
-switch (num) {
-    case "1":
-        result = "Зима";
+//     default:
+//         result = "Введіть число від 1 до 4!!!";  
+// }
+// //alert(result)
+// function check(num) {
+//     let result = "";
+// switch (num) {
+//     case "1":
+//         result = "Зима";
         
-        break;
-    case "2":
-        result = "Весна";
+//         break;
+//     case "2":
+//         result = "Весна";
         
-        break;
+//         break;
     
-        case "3":
-        result = "Літо";
+//         case "3":
+//         result = "Літо";
         
-        break;
+//         break;
     
-        case "4":
-        result = "Осінь";
+//         case "4":
+//         result = "Осінь";
         
-        break;
+//         break;
     
-    default:
-        result = "Введіть число від 1 до 4!!!";  
-    }
-    return result;
-}
+//     default:
+//         result = "Введіть число від 1 до 4!!!";  
+//     }
+//     return result;
+// }
 
-console.log(check("3"))
+// console.log(check("3"))
+
+// --------------------------------
+
+// Створіть масив styles з елементами 'Джаз' і 'Блюз'
+//Додайте в кінець 'Рок-н-ролл'
+//Заменіть значення 'Блюз' на 'Класика'
+//Видаліть перший елемент масива та виведіть його в консоль
+// Додайте 'Реп' та 'Реггі' на початок списку.
+
+const styles = ['Джаз', 'Блюз'] 
+styles.push('Рок-н-ролл') 
+const i = styles.indexOf('Блюз')
+// styles[i] = 'Класика'
+styles.splice(i, 1, 'Класика')
+console.log(styles.shift())
+styles.unshift('Реп', 'Реггі')
+console.log(styles)
