@@ -46,12 +46,14 @@
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
 // 70 === 01:10
 
-const answer = prompt("Enter number");
+//const answer = prompt("Enter number");
 
-let minutes = answer % 60;
-let hours = Math.floor(answer / 60);
+//let minutes = answer % 60;
+//let hours = Math.floor(answer / 60);
 
-minutes = String(minutes).padStart(2, 0);
-hours = String(hours).padStart(2, 0);
-console.log(`${hours}:${minutes}`);
+//minutes = String(minutes).padStart(2, 0);
+//hours = String(hours).padStart(2, 0);
+//console.log(`${hours}:${minutes}`);
+
+//++++++++++++++++++++++++++++++++++++++
 
