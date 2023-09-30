@@ -146,75 +146,118 @@
 
 //Типів транзакцій всього два.
 //Можна покласти або зняти гроші з рахунка
-const Transaction = {
-  DEPOSIT: "deposit",
-  WITHDRAW: "withdraw",
-};
+// const Transaction = {
+//   DEPOSIT: "deposit",
+//   WITHDRAW: "withdraw",
+// };
 
-//Кожна транзакція це об'єкт з властивостями id, type, amount
+// //Кожна транзакція це об'єкт з властивостями id, type, amount
 
-const account = {
-  //поточний баланс рахунка
-  balance: 0,
+// const account = {
+//   //поточний баланс рахунка
+//   balance: 0,
 
-  //Історія транзакцій
-  transactions: [],
+//   //Історія транзакцій
+//   transactions: [],
 
-  //Метод створює і повертає об'єкт транзакцій
-  //Приймає сумму і тип транзакцій
-  createTransaction(type, amount) {
-    return {
-      type,
-      amount,
-    };
-  },
+//   //Метод створює і повертає об'єкт транзакцій
+//   //Приймає сумму і тип транзакцій
+//   createTransaction(type, amount) {
+//     return {
+//       type,
+//       amount,
+//     };
+//   },
 
-  //Метод відповідає за додавання сумми к балансу.
-  //Приймає сумму транзакціи.
-  //Визиває createTransaction для створення об'єкта транзакціи
-  //після чого додає його в історію транзакцій
-  deposit(amount) {
-    this.balance += amount;
-    const transaction = this.createTransaction(Transaction.DEPOSIT, amount);
-    this.transactions.push({ ...transaction, id: Math.random() });
-  },
-  //Метод відповідає за зняття сумми з балансу.
-  //Приймає сумму транзакціи.
-  //Визиває createTransaction для створення об'єкта транзакціи
-  //після чого додає йогого в історю транзакцій
-  //Якщо amount більше ніж поточний баланс, виводимо повідомлення про те,
-  //що недостатньо коштів на рахунку
-  withdraw(amount) {
-   if(amount > this.balance) {
-      return console.log("Недостатньо коштів на рахунку");
-   }
-    this.balance -= amount;
-    const transaction = this.createTransaction(Transaction.WITHDRAW, amount);
-    this.transactions.push({ ...transaction, id: Math.random() });
+//   //Метод відповідає за додавання сумми к балансу.
+//   //Приймає сумму транзакціи.
+//   //Визиває createTransaction для створення об'єкта транзакціи
+//   //після чого додає його в історію транзакцій
+//   deposit(amount) {
+//     this.balance += amount;
+//     const transaction = this.createTransaction(Transaction.DEPOSIT, amount);
+//     this.transactions.push({ ...transaction, id: Math.random() });
+//   },
+//   //Метод відповідає за зняття сумми з балансу.
+//   //Приймає сумму транзакціи.
+//   //Визиває createTransaction для створення об'єкта транзакціи
+//   //після чого додає йогого в історю транзакцій
+//   //Якщо amount більше ніж поточний баланс, виводимо повідомлення про те,
+//   //що недостатньо коштів на рахунку
+//   withdraw(amount) {
+//    if(amount > this.balance) {
+//       return console.log("Недостатньо коштів на рахунку");
+//    }
+//     this.balance -= amount;
+//     const transaction = this.createTransaction(Transaction.WITHDRAW, amount);
+//     this.transactions.push({ ...transaction, id: Math.random() });
 
-  },
-  //Метод повертає поточний баланс
-  getBalance() {
-   return `На вашому рахунку ${this.balance} UAH`;
-  },
-  //Метод шукає і повертає об'єкт транзакціи по id
-  getTransactionDetails(id) {
-   const transaction = this.transactions.find((transaction) => transaction.id === id);
-   if(!transaction) {
-      return "Транзакцію не знайдено";
-   }
-   return transaction;
-  },
-  //Метод повертає кількіств коштів вказаного типу
-  //транзакціи зі всієї історії транзакцій
-  getTransactionType(type) {  
-   return this.transactions.filter((transaction) => transaction.type === type).reduce((sum, {amount}) => sum + amount, 0);
-  },
-};
-account.deposit(1500);
-account.withdraw(1200);
-account.deposit(2600);
-console.log(account.getTransactionType(Transaction.DEPOSIT));
-console.log(account.getTransactionDetails(1));
-console.log(account.getBalance());
-console.log(account);
+//   },
+//   //Метод повертає поточний баланс
+//   getBalance() {
+//    return `На вашому рахунку ${this.balance} UAH`;
+//   },
+//   //Метод шукає і повертає об'єкт транзакціи по id
+//   getTransactionDetails(id) {
+//    const transaction = this.transactions.find((transaction) => transaction.id === id);
+//    if(!transaction) {
+//       return "Транзакцію не знайдено";
+//    }
+//    return transaction;
+//   },
+//   //Метод повертає кількіств коштів вказаного типу
+//   //транзакціи зі всієї історії транзакцій
+//   getTransactionType(type) {  
+//    return this.transactions.filter((transaction) => transaction.type === type).reduce((sum, {amount}) => sum + amount, 0);
+//   },
+// };
+// account.deposit(1500);
+// account.withdraw(1200);
+// account.deposit(2600);
+// console.log(account.getTransactionType(Transaction.DEPOSIT));
+// console.log(account.getTransactionDetails(1));
+// console.log(account.getBalance());
+// console.log(account);
+
+
+// *************************
+
+// 6. Створіть телефонну книгу - об'єкт phonebook,
+// у якого є властивість contacts (список контактів)
+// та методи управління книгою:
+// add(data) - приймає об'єкт data, де зберігається
+// name, email, list, id, createdAt (id та createdAt
+// генеруються відповідними методами:
+//   generateId() {
+//     return "#" + Math.random().toString(36).substr(2, 9);
+//   },
+//   getDate() {
+//     return Date.now();
+//   },);
+// list() - повертає список контактів у вигляді таблиці;
+// delete(name) - видаляє контакт з заданим ім'ям;
+// updateName(oldName, newName) - зиінює ім'я контакта;
+// filtered(category) - фільтрує контактів по обраній категорії (друзі, робота і т.д.)
+
+const phonebook = {
+   contacts : [],
+   add(data){
+     const newContact = {
+      list : 'default',
+      ...data, id : this.generateId(), createdAt : this.getDate()
+     }
+     this.contacts.push(newContact)
+   },
+   list(){
+      console.table(this.contacts)
+   },
+   generateId() {
+          return "#" + Math.random().toString(36).substr(2, 9);
+        },
+        getDate() {
+          return Date.now();
+        },
+}
+phonebook.add({name : 'Alex', email : 'mail', list : 'friends'})
+phonebook.add({name : 'Jon', email : 'mail2'})
+phonebook.list()
