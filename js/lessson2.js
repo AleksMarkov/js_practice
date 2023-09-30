@@ -33,23 +33,48 @@
 //збережіть його результат в змінній sum.
 //Якщо об'єкт salaries пустий, то результат має бути 0
 
-const salaries = {
-   Mango: 100,
-   Poly: 160,
-   Ajax: 1470,
-   };
+// const salaries = {
+//    Mango: 100,
+//    Poly: 160,
+//    Ajax: 1470,
+//    };
 
-   // let sum = 0;
-   // const salary = Object.values(salaries);
-   // for(const num of salary) {
-   //    sum += num;
-   // }
-   // console.log(sum);
+//    // let sum = 0;
+//    // const salary = Object.values(salaries);
+//    // for(const num of salary) {
+//    //    sum += num;
+//    // }
+//    // console.log(sum);
 
-   const salary = Object.values(salaries);
+//    const salary = Object.values(salaries);
 
-   const sum = salary.reduce((sum, num) => sum + num, 0)
-   console.log(sum);
+//    const sum = salary.reduce((sum, num) => sum + num, 0)
+//    console.log(sum);
+
+//3. Напишіть ф-цію calcTotalPrice(stones, stonesName),
+//яка приймає массив об'єктів і
+//рядок з назвами каміння.
+//Функція рахує і повертає загальну вартість каменів
+//з таким ім'ям, ціною та кількістю з об'єкта
+
+// const stones = [
+//    { name: "Смарагд", price: 1300, quantity: 4 },
+//    { name: "Діамант", price: 2700, quantity: 6 },
+//    { name: "Сапфір", price: 400, quantity: 7 },
+//    { name: "Щебінь", price: 150, quantity: 100 },
+//  ];
+
+//  const calcTotalPrice = (stones, stonesName) => {
+//    return stones.reduce((sum, {name, price, quantity}) => name === stonesName ? sum + price * quantity : sum, 0)
+//    // let sum = 0
+//    // for(const {name, price, quantity} of stones){
+//    //    if(name === stonesName){
+//    //       sum += price * quantity
+//    //    }
+//    // }
+//    // return sum
+//  }
+//  console.log(calcTotalPrice(stones, "Смарагд"));
 
 
 
