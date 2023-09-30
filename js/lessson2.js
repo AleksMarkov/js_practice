@@ -96,3 +96,46 @@
 // console.log(calculator);
 // console.log(calculator.sum());
 // console.log(calculator.mult());
+
+//1. Напишіть дві функції
+// letMeSeeYourName(callback) - питає ім'я користувача
+//через prompt и викликає callback функцію
+//greet(name) - коллбек, якій приймає ім'я та логірує в консоль
+//рядок "Привіт, <name>"
+//Реалізуй перевірку, що prompt не пустий
+// якщо пустий - додай дефолтне значення
+
+//function letMeSeeYourName(callback) {
+    //let yourName = prompt("Enter your name!") 
+    //if (!yourName) {
+      //  yourName = "user";
+    //}
+  //  callback(yourName)
+//}
+
+//function greatName(name) {
+ //   console.log(`hello ${name}`);
+//}
+//letMeSeeYourName(greatName);
+
+
+
+//2. Напишіть дві функції
+//makeProduct(name, price, callback) - приймає
+//ім'я та ціну товара, а також callback.
+//Функція створює об'єкт товара, додавая йому унікальний
+//ідентифікатор у властивість id та викликає callback
+//передавая йому створений об'єкт.
+//showProduct(product) - коллбек приймає об'єкт
+//продукта і логірує його в консоль
+
+function makeProduct(name, price, callback) {
+    const product = { name, price, id: Math.random() }
+    callback(product)
+}
+
+function showProduct(product) {
+    console.log(product);
+}
+
+makeProduct("banana", 10, showProduct);
