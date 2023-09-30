@@ -21,12 +21,6 @@
 //       console.log(`${key}: ${user[key]}`);
 //    }
 
-
-
-
-
-
-
 //2. У нас є об'єкт, в якому зберігаються зарплати
 //нашої команди
 //Напишіть код для додавання усіх зарплат та
@@ -76,5 +70,29 @@
 //  }
 //  console.log(calcTotalPrice(stones, "Смарагд"));
 
-
-
+//4. Створіть об'єкт calculator з трьомя методами
+//read(a, b) - приймає два аргумента і зберігає їх
+//як властивості об'єкта
+//sum() повертає сумму збереженних значень (з перевіркою на наявніст властивостей в об'єкті)
+//mult() перемножає збереженні значення і повертає результат
+// const calculator = {
+//   read(a, b) {
+// this.aNew = a;
+// this.bNew = b;
+//   },
+//   sum() {
+// return !this.aNew || !this.bNew
+//   ? "There are no numbers"
+//   : this.aNew + this.bNew;
+//   },
+//   mult() {
+// return !this.aNew || !this.bNew
+//   ? "There are no numbers"
+//   : this.aNew * this.bNew;
+//   },
+// };
+//
+// console.log(calculator.read(5, 10));
+// console.log(calculator);
+// console.log(calculator.sum());
+// console.log(calculator.mult());
