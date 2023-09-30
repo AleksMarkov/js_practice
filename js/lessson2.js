@@ -106,19 +106,17 @@
 // якщо пустий - додай дефолтне значення
 
 //function letMeSeeYourName(callback) {
-    //let yourName = prompt("Enter your name!") 
-    //if (!yourName) {
-      //  yourName = "user";
-    //}
-  //  callback(yourName)
+//let yourName = prompt("Enter your name!")
+//if (!yourName) {
+//  yourName = "user";
+//}
+//  callback(yourName)
 //}
 
 //function greatName(name) {
- //   console.log(`hello ${name}`);
+//   console.log(`hello ${name}`);
 //}
 //letMeSeeYourName(greatName);
-
-
 
 //2. Напишіть дві функції
 //makeProduct(name, price, callback) - приймає
@@ -129,13 +127,94 @@
 //showProduct(product) - коллбек приймає об'єкт
 //продукта і логірує його в консоль
 
-function makeProduct(name, price, callback) {
-    const product = { name, price, id: Math.random() }
-    callback(product)
-}
+// function makeProduct(name, price, callback) {
+//     const product = { name, price, id: Math.random() }
+//     callback(product)
+// }
 
-function showProduct(product) {
-    console.log(product);
-}
+// function showProduct(product) {
+//     console.log(product);
+// }
 
-makeProduct("banana", 10, showProduct);
+// makeProduct("banana", 10, showProduct);
+
+//* TASK 5
+
+//5. Напишіть скрипт керування особистим кабінетом інтернет банка
+//Є об'єкт account в якому необхідно реалізувати
+//методи для работи з балансом та історією транзакцій
+
+//Типів транзакцій всього два.
+//Можна покласти або зняти гроші з рахунка
+const Transaction = {
+  DEPOSIT: "deposit",
+  WITHDRAW: "withdraw",
+};
+
+//Кожна транзакція це об'єкт з властивостями id, type, amount
+
+const account = {
+  //поточний баланс рахунка
+  balance: 0,
+
+  //Історія транзакцій
+  transactions: [],
+
+  //Метод створює і повертає об'єкт транзакцій
+  //Приймає сумму і тип транзакцій
+  createTransaction(type, amount) {
+    return {
+      type,
+      amount,
+    };
+  },
+
+  //Метод відповідає за додавання сумми к балансу.
+  //Приймає сумму транзакціи.
+  //Визиває createTransaction для створення об'єкта транзакціи
+  //після чого додає його в історію транзакцій
+  deposit(amount) {
+    this.balance += amount;
+    const transaction = this.createTransaction(Transaction.DEPOSIT, amount);
+    this.transactions.push({ ...transaction, id: Math.random() });
+  },
+  //Метод відповідає за зняття сумми з балансу.
+  //Приймає сумму транзакціи.
+  //Визиває createTransaction для створення об'єкта транзакціи
+  //після чого додає йогого в історю транзакцій
+  //Якщо amount більше ніж поточний баланс, виводимо повідомлення про те,
+  //що недостатньо коштів на рахунку
+  withdraw(amount) {
+   if(amount > this.balance) {
+      return console.log("Недостатньо коштів на рахунку");
+   }
+    this.balance -= amount;
+    const transaction = this.createTransaction(Transaction.WITHDRAW, amount);
+    this.transactions.push({ ...transaction, id: Math.random() });
+
+  },
+  //Метод повертає поточний баланс
+  getBalance() {
+   return `На вашому рахунку ${this.balance} UAH`;
+  },
+  //Метод шукає і повертає об'єкт транзакціи по id
+  getTransactionDetails(id) {
+   const transaction = this.transactions.find((transaction) => transaction.id === id);
+   if(!transaction) {
+      return "Транзакцію не знайдено";
+   }
+   return transaction;
+  },
+  //Метод повертає кількіств коштів вказаного типу
+  //транзакціи зі всієї історії транзакцій
+  getTransactionType(type) {  
+   return this.transactions.filter((transaction) => transaction.type === type).reduce((sum, {amount}) => sum + amount, 0);
+  },
+};
+account.deposit(1500);
+account.withdraw(1200);
+account.deposit(2600);
+console.log(account.getTransactionType(Transaction.DEPOSIT));
+console.log(account.getTransactionDetails(1));
+console.log(account.getBalance());
+console.log(account);
