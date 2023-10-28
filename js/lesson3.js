@@ -142,7 +142,7 @@
 //         LOW: 'low',
 //     }
 //     constructor() {
-//         this.items = []; 
+//         this.items = [];
 //     }
 //     addNote(note) {
 //         console.log(note)
@@ -157,14 +157,14 @@
 //         const index = this.items.findIndex(item => item.text === noteText)
 //         if (index === -1) {
 //             alert("note no found")
-//             return 
+//             return
 //         }
 //         this.items.splice(index, 1)
 //     }
     
 //     updatePriority(noteText, newPriority) {
 
-//         const note = this.items.find(item => item.text === noteText) 
+//         const note = this.items.find(item => item.text === noteText)
 //         console.log(note)
 //         if (note) {
 //             note.priority = newPriority;
@@ -175,7 +175,7 @@
 //         // const index = this.items.findIndex(item => item.text === noteText)
 //         // if (index === -1) {
 //         //          alert("note no found")
-//         //         return 
+//         //         return
 //         // }
 //         // this.items[index].priority = newPriority;
 //     }
@@ -197,4 +197,8 @@
 // notes.updatePriority("Helo!", Notes.Priority.HIGHT)
 
 // console.log(notes)
+
+
+
+
 
